@@ -42,7 +42,7 @@ class ViewController: UIViewController {
             case 16..<18.5:
                 result = "Abaixo do Peso"
                 image = "abaixo"
-            case 18.5..<25:
+            case 20..<25:
                 result = "Peso ideal"
                 image = "ideal"
             case 25..<30:
@@ -52,9 +52,10 @@ class ViewController: UIViewController {
                 result = "Obesidade"
                 image = "obesidade"
         }
-        lbResult.text = "\(Int(imc)) : \(result)"
+        lbResult.text = String(format: "%.2f : \(result)", imc)
         ivResult.image = UIImage(named: image)
         viResult.isHidden = false
+        
     }
 
 }
